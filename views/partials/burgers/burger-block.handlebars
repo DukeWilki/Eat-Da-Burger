@@ -1,9 +1,24 @@
 <li>
 	{{name}}<br>
-
+{{#if eaten}}
 	<button class="change-eat" data-id="{{id}}" data-eat="{{eaten}}">
-		{{#if eaten}}⭐⭐⭐⭐⭐{{else}}Add to bucket list!{{/if}}
+		{{!-- {{#if eaten}}Eat me!{{else}}{{/if}} --}}Eat me!
 	</button>
+{{/if}}
+
+
+{{#unless eaten}}
+	{{!-- {{#if 5}}❤️{{else}}~~~{{/if}} --}}
+	<button class="rate" data-id="{{id}}" data-rate="5">❤️</button>
+	<button class="rate" data-id="{{id}}" data-rate="4">⭐</button>
+	<button class="rate" data-id="{{id}}" data-rate="3">👍</button>
+	<button class="rate" data-id="{{id}}" data-rate="2">👎</button>
+	<button class="rate" data-id="{{id}}" data-rate="1">🤮</button>
+{{/unless}}
+
+  {{!-- <input type="number" id="rate" name="rate" min="1" max="5">
+  <input type="submit" value="rate"> --}}
+
 
 	{{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
 </li>

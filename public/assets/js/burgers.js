@@ -32,7 +32,7 @@ $(function() {
 
     var newBurger = {
       name: $("#ca").val().trim(),
-      eaten: $("[name=eaten]:checked").val().trim()
+      // eaten: $("[name=eaten]:checked").val().trim()
     };
 
     // Send the POST request.
@@ -48,19 +48,43 @@ $(function() {
     );
   });
 
-  $(".delete-burger").on("click", function(event) {
+  $(".rate").on("click", function(event) {
     event.preventDefault();
     var id = $(this).data("id");
+    var rating = $(this).data("rate");
 
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted burger", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+$.ajax("/api/burgers/rate/" + id, {
+  type: "PUT",
+  data: {rating}
+}).then(
+  function() {
+    console.log("rated burger");
+    // Reload the page to get the updated list
+    location.reload();
+  }
+);
 });
+
+});
+
+
+
+
+  // $(".delete-burger").on("click", function(event) {
+  //   event.preventDefault();
+  //   var id = $(this).data("id");
+
+  //   // Send the DELETE request.
+  //   $.ajax("/api/burgers/" + id, {
+  //     type: "DELETE"
+  //   }).then(
+  //     function() {
+  //       console.log("deleted burger", id);
+  //       // Reload the page to get the updated list
+  //       location.reload();
+  //     }
+  //   );
+  // });
+// });
+
+

@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -45,6 +45,26 @@ router.put("/api/burgers/:id", function(req, res) {
 console.log(req.body);
   burger.update({
     eaten: req.body.eaten
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(400).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+
+// Put route for rating
+router.put("/api/burgers/rate/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  
+  console.log("condition", condition);
+console.log(req.body);
+  burger.update({
+    rating: req.body.rating
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
