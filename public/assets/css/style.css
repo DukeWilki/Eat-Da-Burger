@@ -1,5 +1,10 @@
 body {
   background-color: orange;
+  background-image: url("../img/burger.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 45% 20%;
+
 }
 
 h1, h2 {
@@ -13,7 +18,7 @@ h1, h2 {
 }
 
 h1 {
-  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfs9Sg891hIWrEg0M2QlQNUeoqXpIUDhi6og&usqp=CAU) transparent; */
+
 }
 
 h2 {
@@ -28,7 +33,7 @@ h2 {
   font-family: 'Lobster', cursive;
   width: 45%;
   float: left;
-  padding: 20px;
+  padding: 15px;
 }
 
 #faves {
@@ -37,9 +42,14 @@ h2 {
 
 .new {
   /* width: 100%; */
-  margin-left: auto;
+  margin-left: 35%;
   margin-right: auto;
-  width: 8em
+  /* width: 8em; */
+}
+
+.newbtn {
+  display: flex;
+  justify-content: center;
 }
 
 li {
