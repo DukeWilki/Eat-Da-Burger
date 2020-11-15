@@ -3,6 +3,7 @@ body {
 }
 
 h1, h2 {
+  margin: auto;
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: xxx-large;
@@ -30,10 +31,6 @@ h2 {
   padding: 20px;
 }
 
-/* .hidden {
-  display: none;
-} */
-
 #faves {
   flex-grow: 1;
 }
@@ -50,14 +47,10 @@ li {
   margin: 5px;
   background: #643a2d;
   color: yellow;
-  /* border-top-left-radius: 25%;
-  border-top-right-radius: 25%; */
   border-radius: 15%;
   list-style-type: none;
   text-align: center;
-  /* padding: 0; Remove padding */
-  /* margin: 0; Remove margins */
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 button {
@@ -66,7 +59,7 @@ button {
   font-family: 'Lobster', cursive;
 }
 
-.change-eat {
+.change-eat, .new {
   background: red ;
   color: yellow;
 }
