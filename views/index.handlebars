@@ -1,0 +1,51 @@
+<h1>Eat-Da-Burger</h1>
+<h1>🍔</h1>
+
+
+<div class="float-container">
+
+  <div id="bucket" class="section">
+    <h2>My burger bucket list</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless eaten}}
+      {{> burgers/burger-block eaten=true}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+
+  <div id="faves" class="section">
+    <h2>My Favourite Burgers</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if eaten}}
+      {{> burgers/burger-block eaten=false}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="new section">
+<h2>New Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="eaten">eaten?</label><br>
+    <input type="radio" name="eaten" value="1" checked> eaten!<br>
+    <input type="radio" name="eaten" value="0"> Awake
+  </div>
+
+  <button type="submit">Add burger</button>
+  </div>
+
+</form>

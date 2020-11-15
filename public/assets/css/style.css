@@ -1,0 +1,64 @@
+body {
+  background-color: orange;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: x-large;
+    -webkit-text-fill-color: red;
+    -webkit-text-stroke-width: .05px;
+    -webkit-text-stroke-color: yellow;
+}
+
+h1 {
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfs9Sg891hIWrEg0M2QlQNUeoqXpIUDhi6og&usqp=CAU) transparent; */
+}
+
+h2 {
+  font-size: large;
+}
+
+.float-container {
+  padding: 20px;
+}
+
+.section {
+  font-family: 'Lobster', cursive;
+  width: 45%;
+  float: left;
+  padding: 20px;
+}
+
+#faves {
+  flex-grow: 1;
+}
+
+.new {
+  width: 100%;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+  list-style-type: none;
+  text-align: center;
+  /* padding: 0; Remove padding */
+  /* margin: 0; Remove margins */
+    margin-right: 40px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
