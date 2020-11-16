@@ -9,9 +9,9 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     user: "root",
     password: "Queenw00d.",
-    database: "burger_db"
-  })
-}
+    database: "burger_db",
+  });
+};
 
 // var connection = mysql.createConnection({
 //   host: "localhost",
