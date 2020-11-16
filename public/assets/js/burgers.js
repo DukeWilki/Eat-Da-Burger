@@ -1,90 +1,54 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
-  $(".change-eat").on("click", function(event) {
+$(function () {
+  $(".change-eat").on("click", function (event) {
     event.preventDefault();
     var id = $(this).data("id");
     var newEat = $(this).attr("data-eat");
 
     var newEatState = {
-      eaten: newEat === 'true' 
+      eaten: newEat === "true",
     };
-    console.log({newEatState});
+    console.log({ newEatState });
 
-    // Send the PUT request.
+    // PUT request.
     $.ajax({
-      url: "/api/burgers/" + id, 
-      // url: "/api/burgers/update/" + id, 
+      url: "/api/burgers/" + id,
       type: "PUT",
-      // type: "POST",
       data: newEatState,
-      dataType: 'json',
-      complete: function(response){
-        console.log("changed sleep to", newEat);
-        // Reload the page to get the updated list
-        location.reload();
-      }
+      dataType: "json",
+      complete: function (response) {
+        location.reload(); // reload to udate 'favourites' list
+      },
     });
   });
 
-  $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
+  $(".create-form").on("submit", function (event) {
     event.preventDefault();
 
     var newBurger = {
       name: $("#ca").val().trim(),
-      // eaten: $("[name=eaten]:checked").val().trim()
     };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("created new burger");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+      data: newBurger,
+    }).then(function () {
+      location.reload(); // reload to udate 'bucket' list
+    });
   });
 
-  $(".rate").on("click", function(event) {
+  $(".rate").on("click", function (event) {
     event.preventDefault();
     var id = $(this).data("id");
     var rating = $(this).data("rate");
 
-$.ajax("/api/burgers/rate/" + id, {
-  type: "PUT",
-  data: {rating}
-}).then(
-  function() {
-    console.log("rated burger");
-    // Reload the page to get the updated list
-    location.reload();
-  }
-);
+    $.ajax("/api/burgers/rate/" + id, {
+      type: "PUT",
+      data: { rating },
+    }).then(function () {
+      console.log("rated burger");
+      // Reload the page to get the updated list
+      location.reload(); // reload to reorder 'favourites' list in by rating
+    });
+  });
 });
-
-});
-
-
-
-
-  // $(".delete-burger").on("click", function(event) {
-  //   event.preventDefault();
-  //   var id = $(this).data("id");
-
-  //   // Send the DELETE request.
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "DELETE"
-  //   }).then(
-  //     function() {
-  //       console.log("deleted burger", id);
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //     }
-  //   );
-  // });
-// });
-
-
