@@ -28,6 +28,8 @@ You will start off with a 'bucket list' of burgers. Once you have tried that bur
 ## Design
 I used colour scheme of yellow, orange and red as they are considered "hungry" colours in markerting design. They are used by a lot of bread-based reastaurancts because it increases appetite, such as Macdonalds and Bread top. The image at the back it to appeal to a casual audience who love burgers.
 
+![Screenshot 1](https://github.com/DukeWilki/Employee-Tracker/blob/master/public/assets/img/screenshot.JPG)
+
 ## License
 This application has MIT License applied.
 
